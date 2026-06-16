@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    EZ Memory – main.js
    ============================================================ */
 (function () {
@@ -376,11 +376,11 @@
         })
         .catch(function () { /* lỗi mạng – vẫn chuyển trang bình thường */ })
         .finally(function () {
-          window.location.href = 'cam-on.html?name=' + nameEncoded;
+          window.location.href = 'thank-you.html?name=' + nameEncoded;
         });
       } else {
         // Redirect ngay nếu chưa cấu hình URL
-        window.location.href = 'cam-on.html?name=' + nameEncoded;
+        window.location.href = 'thank-you.html?name=' + nameEncoded;
       }
     });
   }

@@ -1,9 +1,9 @@
-# EZ Memory – robots.txt
+﻿# EZ Memory – robots.txt
 # https://ezmemory.edu.vn
 
 User-agent: *
 Allow: /
-Disallow: /cam-on.html
+Disallow: /thank-you.html
 
 # Block common crawl traps
 Disallow: /search
