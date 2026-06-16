@@ -1,0 +1,13 @@
+# EZ Memory – robots.txt
+# https://ezmemory.edu.vn
+
+User-agent: *
+Allow: /
+Disallow: /cam-on.html
+
+# Block common crawl traps
+Disallow: /search
+Disallow: /?*
+
+# Sitemap location
+Sitemap: https://ezmemory.edu.vn/sitemap.xml

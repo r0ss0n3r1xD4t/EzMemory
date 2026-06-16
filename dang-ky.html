@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký Học Miễn Phí | EZ Memory</title>
+  <meta name="description" content="Đăng ký tham gia khóa học EZ Memory hoàn toàn miễn phí. Nhận tài liệu học tập ngay sau khi đăng ký.">
+  <meta name="keywords" content="đăng ký EZ Memory, khóa học miễn phí, kỹ năng học tập online, SSA101 FPT">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ezmemory.edu.vn/dang-ky.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://ezmemory.edu.vn/dang-ky.html">
+  <meta property="og:title"       content="Đăng Ký Học Miễn Phí | EZ Memory">
+  <meta property="og:description" content="Điền form đăng ký EZ Memory để nhận tài liệu học tập 5 session và hướng dẫn thực hành miễn phí.">
+  <meta property="og:locale"      content="vi_VN">
+  <meta property="og:site_name"   content="EZ Memory">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Đăng Ký Học Miễn Phí | EZ Memory">
+  <meta name="twitter:description" content="Đăng ký EZ Memory miễn phí và nhận ngay lộ trình học, bài tập thực hành và hướng dẫn Anki/Quizlet.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Điều hướng chính">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="EZ Memory – Trang chủ">
+          EZ <span class="logo-accent">Memory</span>
+        </a>
+        <ul class="navbar__nav" id="navbar-nav" role="list">
+          <li role="listitem"><a href="index.html"    class="navbar__link">Trang chủ</a></li>
+          <li role="listitem"><a href="khoa-hoc.html" class="navbar__link">Khóa học</a></li>
+          <li role="listitem"><a href="index.html#giang-vien" class="navbar__link">Giảng viên</a></li>
+          <li role="listitem"><a href="index.html#faq"        class="navbar__link">FAQ</a></li>
+          <li role="listitem"><a href="dang-ky.html"  class="navbar__link">Đăng ký</a></li>
+        </ul>
+        <a href="dang-ky.html" class="btn btn-primary navbar__cta">Đăng ký miễn phí</a>
+        <button class="navbar__toggle" id="nav-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="navbar-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- BREADCRUMB -->
+<div class="nav-spacer"></div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb__list" role="list">
+      <li class="breadcrumb__item" role="listitem"><a href="index.html">Trang chủ</a></li>
+      <span class="breadcrumb__sep" aria-hidden="true">›</span>
+      <li class="breadcrumb__item" role="listitem" aria-current="page">Đăng ký khóa học</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero register-hero" aria-label="Đăng ký EZ Memory">
+  <div class="container">
+    <div class="page-hero__tag">🎓 Hoàn toàn miễn phí · Không điều kiện</div>
+    <h1 class="page-hero__title">Đăng Ký Khóa Học EZ Memory</h1>
+    <p class="page-hero__subtitle">
+      Chỉ mất 2 phút để đăng ký. Bạn sẽ nhận được lịch học và tài liệu chuẩn bị
+      qua email ngay sau khi hoàn tất đăng ký.
+    </p>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM + SIDEBAR -->
+<section class="register-body" aria-label="Form đăng ký">
+  <div class="container">
+    <div class="register-grid">
+
+      <!-- FORM -->
+      <div>
+        <div class="form-card fade-in">
+          <h2 class="form-card__title">Đăng ký học miễn phí</h2>
+          <p class="form-card__subtitle">
+            Điền đầy đủ thông tin bên dưới để nhận tài liệu học tập, bộ câu hỏi đánh giá và lộ trình 5 session của EZ Memory. Các trường có dấu
+            <span style="color:var(--red);font-weight:700">*</span> là bắt buộc.
+          </p>
+
+          <form id="registration-form" novalidate aria-label="Form đăng ký khóa học EZ Memory">
+
+            <!-- HO VA TEN -->
+            <div class="form-group">
+              <label class="form-label" for="fullname">
+                Họ và tên <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                class="form-control"
+                placeholder="Nguyễn Văn A"
+                autocomplete="name"
+                aria-required="true"
+                aria-describedby="fullname-error"
+                maxlength="100"
+              >
+              <div class="form-error" id="fullname-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label class="form-label" for="email">
+                Địa chỉ email <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="example@email.com"
+                autocomplete="email"
+                aria-required="true"
+                aria-describedby="email-error"
+                maxlength="150"
+              >
+              <div class="form-hint">Chúng tôi sẽ gửi lịch học và xác nhận đến địa chỉ này.</div>
+              <div class="form-error" id="email-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- SO DIEN THOAI -->
+            <div class="form-group">
+              <label class="form-label" for="phone">
+                Số điện thoại <span style="color:var(--gray);font-weight:400">(không bắt buộc)</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="0912345678"
+                autocomplete="tel"
+                aria-describedby="phone-hint phone-error"
+                maxlength="15"
+                inputmode="numeric"
+              >
+              <div class="form-hint" id="phone-hint">Nếu nhập, vui lòng dùng đúng 10 chữ số.</div>
+              <div class="form-error" id="phone-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- TRINH DO HOC VAN -->
+            <div class="form-group">
+              <label class="form-label" for="education">
+                Bạn đang là... <span class="required" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="education"
+                name="education"
+                class="form-control"
+                aria-required="true"
+                aria-describedby="education-error"
+              >
+                <option value="" disabled selected>-- Chọn nhóm học viên phù hợp --</option>
+                <option value="thpt">Học sinh THPT</option>
+                <option value="daihoc">Sinh viên đại học</option>
+                <option value="dilam">Người đi làm</option>
+                <option value="khac">Khác</option>
+              </select>
+              <div class="form-error" id="education-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="study-style">
+                Bạn thường học như thế nào? <span class="required" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="study-style"
+                name="studyStyle"
+                class="form-control"
+                aria-required="true"
+                aria-describedby="study-style-error"
+              >
+                <option value="" disabled selected>-- Chọn cách học gần nhất với bạn --</option>
+                <option value="doc-lai">Đọc lại tài liệu</option>
+                <option value="chep-bai">Chép bài</option>
+                <option value="highlight">Highlight</option>
+                <option value="hoc-thuoc">Học thuộc</option>
+                <option value="chua-co-phuong-phap">Chưa có phương pháp</option>
+              </select>
+              <div class="form-error" id="study-style-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- LY DO THAM GIA -->
+            <div class="form-group">
+              <label class="form-label" for="reason">
+                Vì sao bạn muốn tham gia? <span class="required" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="reason"
+                name="reason"
+                class="form-control"
+                placeholder="Ví dụ: Mình đang học đại học và gặp khó khăn trong việc ghi nhớ kiến thức. Mình muốn tìm phương pháp học hiệu quả hơn để cải thiện kết quả học tập..."
+                aria-required="true"
+                aria-describedby="reason-hint reason-error"
+                rows="4"
+                maxlength="1000"
+              ></textarea>
+              <div class="form-hint" id="reason-hint">Tối thiểu 20 ký tự – chia sẻ thêm để chúng tôi hỗ trợ bạn tốt hơn.</div>
+              <div class="form-error" id="reason-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="source">Bạn biết đến EZ Memory qua...</label>
+              <select
+                id="source"
+                name="source"
+                class="form-control"
+              >
+                <option value="" selected>-- Chọn một kênh --</option>
+                <option value="facebook">Facebook</option>
+                <option value="zalo">Zalo</option>
+                <option value="ban-be">Bạn bè</option>
+                <option value="truong-hoc">Trường học</option>
+                <option value="google">Google</option>
+                <option value="khac">Khác</option>
+              </select>
+            </div>
+
+            <!-- DIEU KHOAN -->
+            <div class="form-group">
+              <label class="form-check" for="terms">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  aria-required="true"
+                  aria-describedby="terms-error"
+                >
+                <span class="form-check__label">
+                  Tôi đồng ý với
+                  <a href="#" aria-label="Điều khoản sử dụng">điều khoản sử dụng</a>
+                  và
+                  <a href="#" aria-label="Chính sách bảo mật">chính sách bảo mật</a>
+                  của EZ Memory. Tôi hiểu rằng thông tin của mình chỉ được dùng để liên hệ về khóa học.
+                </span>
+              </label>
+              <div class="form-error" id="terms-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-check" for="newsletter">
+                <input
+                  type="checkbox"
+                  id="newsletter"
+                  name="newsletter"
+                >
+                <span class="form-check__label">
+                  Tôi muốn nhận thông báo về các khóa học mới
+                </span>
+              </label>
+            </div>
+
+            <!-- SUBMIT -->
+            <button type="submit" class="btn-submit" aria-label="Đăng ký khóa học EZ Memory">
+              Đăng ký ngay – Miễn phí 100%
+            </button>
+
+            <p style="text-align:center;margin-top:14px;font-size:.83rem;color:var(--gray);">
+              🔒 Thông tin của bạn được bảo mật tuyệt đối. Không spam, không quảng cáo.
+            </p>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="benefit-sidebar fade-in fade-in-delay-2">
+          <h3 class="benefit-sidebar__title">✨ Bạn sẽ nhận được:</h3>
+          <ul class="benefit-sidebar__list" role="list">
+            <li class="benefit-sidebar__item" role="listitem">
+              <div class="benefit-sidebar__check" aria-hidden="true">✓</div>
+              <span>Tài liệu học tập 5 session</span>
+            </li>
+            <li class="benefit-sidebar__item" role="listitem">
+              <div class="benefit-sidebar__check" aria-hidden="true">✓</div>
+              <span>Bộ câu hỏi đánh giá</span>
+            </li>
+            <li class="benefit-sidebar__item" role="listitem">
+              <div class="benefit-sidebar__check" aria-hidden="true">✓</div>
+              <span>Bài tập thực hành</span>
+            </li>
+            <li class="benefit-sidebar__item" role="listitem">
+              <div class="benefit-sidebar__check" aria-hidden="true">✓</div>
+              <span>Hướng dẫn dùng Anki/Quizlet</span>
+            </li>
+            <li class="benefit-sidebar__item" role="listitem">
+              <div class="benefit-sidebar__check" aria-hidden="true">✓</div>
+              <span>Hỗ trợ từ nhóm EZ Memory</span>
+            </li>
+          </ul>
+
+          <hr class="benefit-sidebar__divider">
+
+          <div class="benefit-sidebar__proof">
+            <div class="benefit-sidebar__rating" aria-label="Đánh giá 4.9 trên 5">4.9</div>
+            <div class="benefit-sidebar__stars" aria-hidden="true">★★★★★</div>
+            <div class="benefit-sidebar__proof-text">Đã có 500+ học viên đăng ký</div>
+          </div>
+
+          <hr class="benefit-sidebar__divider">
+
+          <blockquote style="font-size:0.96rem; line-height:1.7; color:rgba(255,255,255,.88); margin-bottom:14px;">
+            “Mình áp dụng Active Recall ngay tuần đầu và thấy việc ôn tập nhẹ đầu hơn hẳn. Rất dễ hiểu, rất thực tế.”
+          </blockquote>
+          <p style="font-size:.88rem;color:rgba(255,255,255,.72);margin-bottom:16px;">— Phương Linh, Học sinh lớp 12</p>
+          <div style="text-align:center;">
+            <p style="font-size:1rem;font-weight:700;color:var(--white);margin-bottom:14px;">
+              Hoàn toàn miễn phí – Không cần thẻ tín dụng
+            </p>
+            <a href="khoa-hoc.html" class="btn btn-outline-white btn-full" style="font-size:.88rem;" aria-label="Xem nội dung khóa học">
+              📚 Xem nội dung khóa học
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo">EZ <span class="logo-accent">Memory</span></a>
+        <p class="footer__tagline">Học ít hơn – Nhớ lâu hơn – Hiệu quả hơn.</p>
+        <span class="tag tag--navy" style="font-size:.78rem;">SSA101 · Nhóm 6 · ĐH FPT</span>
+      </div>
+      <div>
+        <p class="footer__heading">Khóa học</p>
+        <ul class="footer__links" role="list">
+          <li><a href="khoa-hoc.html" class="footer__link">Nội dung khóa học</a></li>
+          <li><a href="dang-ky.html"  class="footer__link">Đăng ký ngay</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Hỗ trợ</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html#faq" class="footer__link">Câu hỏi thường gặp</a></li>
+          <li><a href="index.html#giang-vien" class="footer__link">Đội ngũ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Liên hệ</p>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:ezmemory.ssa101@fpt.edu.vn" class="footer__link">📧 ezmemory.ssa101@fpt.edu.vn</a></li>
+          <li><a href="sitemap.xml" class="footer__link">🗺 Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 EZ Memory – Nhóm 6, SSA101, ĐH FPT</span>
+      <span>Được xây dựng với ❤️ bởi sinh viên FPT</span>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Thông báo cookie" aria-live="polite">
+  <p>🍪 Chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn. Bằng cách tiếp tục, bạn đồng ý với <a href="#" style="color:var(--yellow)">chính sách cookie</a> của chúng tôi.</p>
+  <div class="cookie-banner__btns">
+    <button class="btn btn-primary" data-cookie-accept style="padding:10px 20px;font-size:.88rem;">Chấp nhận</button>
+    <button class="btn btn-outline-white" data-cookie-decline style="padding:10px 20px;font-size:.88rem;">Từ chối</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
