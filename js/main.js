@@ -279,8 +279,8 @@
           clearError(id); return true;
 
         case 'phone':
-          if (val && !/^\d{10}$/.test(val)) {
-            showError(id, 'Số điện thoại phải là 10 chữ số (ví dụ: 0912345678).');
+          if (val && !/^(\+84|0)\d{9}$/.test(val)) {
+            showError(id, 'Số điện thoại không hợp lệ. Vui lòng nhập 10 số (0xxxxxxxxx) hoặc dạng +84xxxxxxxxx.');
             return false;
           }
           clearError(id); return true;
