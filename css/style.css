@@ -725,6 +725,102 @@ input, select, textarea { font-family: inherit; }
 .testimonial-card__author-info span   { font-size: .8rem; color: var(--gray); }
 
 /* ============================================================
+   CERTIFICATES GALLERY
+   ============================================================ */
+.certs-heading {
+  margin-top: 64px;
+  margin-bottom: 28px;
+}
+.certs-heading h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.certs-heading p { font-size: .93rem; color: var(--gray); }
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.cert-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 2px solid var(--light-gray);
+  transition: var(--transition);
+  cursor: zoom-in;
+}
+.cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.cert-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.cert-card:hover .cert-card__img { transform: scale(1.02); }
+.cert-card__footer {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--light-gray);
+}
+.cert-card__badge {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  color: var(--white);
+  font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cert-card__info strong { display: block; font-size: .88rem; color: var(--navy); }
+.cert-card__info span   { font-size: .78rem; color: var(--gray); }
+
+/* Lightbox */
+.cert-lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,.82);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.cert-lightbox.open { display: flex; }
+.cert-lightbox__img {
+  max-width: min(90vw, 680px);
+  max-height: 90vh;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+}
+.cert-lightbox__close {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: rgba(255,255,255,.15);
+  border: none; cursor: pointer;
+  color: var(--white);
+  font-size: 1.6rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.cert-lightbox__close:hover { background: rgba(255,255,255,.28); }
+
+@media (max-width: 600px) {
+  .certs-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    FAQ
    ============================================================ */
 .faq { background: var(--light-bg); }

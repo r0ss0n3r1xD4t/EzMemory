@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sổ Tay Học Viên – EZ Memory | Handbook Ôn Tập & Áp Dụng</title>
+  <meta name="description" content="Tải và đọc Sổ Tay Học Viên EZ Memory – tổng hợp toàn bộ kiến thức 5 session, mẫu biểu và checklist để áp dụng Active Recall và Spaced Repetition ngay hôm nay.">
+  <meta name="keywords" content="EZ Memory handbook, sổ tay học viên, Active Recall, Spaced Repetition, tài liệu học tập, SSA101">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ezmemory.edu.vn/handbook.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://ezmemory.edu.vn/handbook.html">
+  <meta property="og:title"       content="Sổ Tay Học Viên – EZ Memory | Handbook Ôn Tập & Áp Dụng">
+  <meta property="og:description" content="Tổng hợp toàn bộ kiến thức 5 session EZ Memory, kèm mẫu biểu lịch ôn và checklist thực hành. Hoàn thành khóa học để nhận mật khẩu mở tài liệu.">
+  <meta property="og:image"       content="https://ezmemory.edu.vn/og-image.png">
+  <meta property="og:locale"      content="vi_VN">
+  <meta property="og:site_name"   content="EZ Memory">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sổ Tay Học Viên – EZ Memory">
+  <meta name="twitter:description" content="Tổng hợp kiến thức 5 session EZ Memory. Hoàn thành khóa học để nhận mật khẩu.">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page Hero (handbook variant) ── */
+    .page-hero--handbook {
+      background: linear-gradient(135deg, var(--navy) 0%, #1e4a82 55%, var(--teal) 100%);
+      padding: 56px 0 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero--handbook::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 50px;
+      background: #f8fbff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero--handbook .page-hero__tag { color: rgba(255,255,255,.82); background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); }
+    .page-hero--handbook .page-hero__title  { color: var(--white); }
+    .page-hero--handbook .page-hero__subtitle { color: rgba(255,255,255,.78); }
+
+    /* ── How-to-get section ── */
+    .how-to-section { background: #f8fbff; padding: 56px 0; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .step-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .step-card__num {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: var(--white);
+      font-weight: 900;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step-card__icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .step-card__title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .step-card__text  { font-size: .9rem; color: var(--gray); line-height: 1.65; }
+    .step-arrow {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; color: var(--blue); opacity: .5;
+      margin-top: 16px;
+    }
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Handbook gate wrapper ── */
+    .handbook-section { padding: 56px 0 72px; background: var(--white); }
+
+    /* ── Lock card (shown when locked) ── */
+    .lock-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--light-gray);
+      padding: 48px 40px 44px;
+      text-align: center;
+    }
+    .lock-card__icon { font-size: 3.6rem; margin-bottom: 18px; }
+    .lock-card__title {
+      font-size: 1.45rem; font-weight: 900;
+      color: var(--navy); margin-bottom: 10px;
+    }
+    .lock-card__subtitle {
+      font-size: .97rem; color: var(--gray);
+      line-height: 1.68; margin-bottom: 32px;
+    }
+    .lock-card__subtitle a { color: var(--blue); font-weight: 600; }
+    .lock-card__subtitle a:hover { text-decoration: underline; }
+
+    /* Password form */
+    .pw-form { display: flex; flex-direction: column; gap: 14px; }
+    .pw-input-wrap { position: relative; }
+    .pw-input {
+      width: 100%;
+      padding: 14px 48px 14px 18px;
+      border: 2px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      color: var(--dark);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      background: #fafcff;
+    }
+    .pw-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(58,123,213,.12); }
+    .pw-input.error { border-color: var(--red); box-shadow: 0 0 0 3px rgba(231,76,60,.12); }
+    .pw-toggle {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer; font-size: 1.15rem;
+      color: var(--gray); padding: 4px; line-height: 1;
+    }
+    .pw-error {
+      display: none;
+      background: rgba(231,76,60,.08);
+      border: 1px solid rgba(231,76,60,.25);
+      color: var(--red);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-align: left;
+    }
+    .pw-error.visible { display: block; }
+    .pw-hint {
+      font-size: .82rem; color: var(--gray);
+      text-align: center; margin-top: 4px;
+    }
+
+    /* ── PDF Viewer (hidden until unlocked) ── */
+    .handbook-viewer { display: none; }
+    .handbook-viewer.visible { display: block; }
+
+    .viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, var(--navy), #1e4a82);
+      border-radius: var(--radius-md);
+      color: var(--white);
+    }
+    .viewer-header__title { font-size: 1.1rem; font-weight: 700; }
+    .viewer-header__sub   { font-size: .85rem; color: rgba(255,255,255,.7); margin-top: 2px; }
+    .viewer-header__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .viewer-lock-btn {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .viewer-lock-btn:hover { background: rgba(255,255,255,.25); }
+
+    .pdf-embed-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--light-gray);
+    }
+    .pdf-embed-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 780px;
+      border: none;
+    }
+    .pdf-fallback {
+      display: none;
+      padding: 40px 24px;
+      text-align: center;
+      background: var(--light-bg);
+    }
+    .pdf-fallback p { color: var(--gray); margin-bottom: 16px; }
+
+    /* ── Success toast ── */
+    .unlock-toast {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      background: rgba(39,174,96,.1);
+      border: 1px solid rgba(39,174,96,.3);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+    .unlock-toast.visible { display: flex; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .lock-card { padding: 32px 20px 28px; }
+      .pdf-embed-wrap iframe { height: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar injected by js/navbar.js -->
+<header></header>
+<script src="js/navbar.js"></script>
+
+<main>
+
+<!-- BREADCRUMB -->
+<div class="nav-spacer"></div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb__list" role="list">
+      <li class="breadcrumb__item" role="listitem"><a href="index.html">Trang chủ</a></li>
+      <span class="breadcrumb__sep" aria-hidden="true">›</span>
+      <li class="breadcrumb__item" role="listitem" aria-current="page">Sổ tay học viên</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero page-hero--handbook" aria-label="Sổ tay học viên EZ Memory">
+  <div class="container">
+    <div class="page-hero__tag">📘 Tài liệu độc quyền</div>
+    <h1 class="page-hero__title">Sổ Tay Học Viên EZ Memory</h1>
+    <p class="page-hero__subtitle">
+      Tổng hợp toàn bộ kiến thức 5 session · Mẫu biểu lịch ôn · Checklist thực hành ·
+      Cheat Sheet ôn nhanh trong 2 phút. <br>
+      <strong style="color:rgba(255,255,255,.95);">Hoàn thành khóa học để nhận mật khẩu mở tài liệu từ giảng viên.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- HOW TO GET THE PASSWORD -->
+<section class="how-to-section" aria-label="Cách nhận mật khẩu">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-tag">🔑 Cách nhận mật khẩu</span>
+      <h2 class="section-title" style="margin-top:10px;">3 Bước Để Mở Khóa Tài Liệu</h2>
+      <p class="section-subtitle">
+        Sổ tay được bảo vệ để đảm bảo chỉ học viên đã hoàn thành khóa học mới
+        nhận được giá trị tốt nhất từ tài liệu này.
+      </p>
+    </div>
+    <div class="steps-grid">
+
+      <div class="step-card fade-in">
+        <div class="step-card__num">1</div>
+        <div class="step-card__icon">📝</div>
+        <div class="step-card__title">Đăng ký khóa học</div>
+        <p class="step-card__text">
+          Điền form đăng ký miễn phí để tham gia EZ Memory. Chỉ mất 2 phút –
+          không tốn bất kỳ chi phí nào.
+        </p>
+        <div style="margin-top:18px;">
+          <a href="register.html" class="btn btn-primary" style="font-size:.88rem;padding:10px 20px;">
+            Đăng ký ngay →
+          </a>
+        </div>
+      </div>
+
+      <div class="step-card fade-in fade-in-delay-1">
+        <div class="step-card__num">2</div>
+        <div class="step-card__icon">🎓</div>
+        <div class="step-card__title">Hoàn thành 5 buổi học</div>
+        <p class="step-card__text">
+          Tham gia đầy đủ 5 session của khóa học. Mỗi buổi 45 phút –
+          bạn sẽ được thực hành ngay tại lớp.
+        </p>
+        <div style="margin-top:18px;">
+          <a href="courses.html" class="btn btn-secondary" style="font-size:.88rem;padding:10px 20px;">
+            Xem nội dung →
+          </a>
+        </div>
+      </div>
+
+      <div class="step-card fade-in fade-in-delay-2">
+        <div class="step-card__num">3</div>
+        <div class="step-card__icon">📬</div>
+        <div class="step-card__title">Nhận mật khẩu từ giảng viên</div>
+        <p class="step-card__text">
+          Sau khi hoàn thành khóa học, giảng viên sẽ gửi mật khẩu qua email
+          để bạn mở khóa và truy cập sổ tay.
+        </p>
+        <div style="margin-top:18px;">
+          <span class="tag tag--teal" style="font-size:.82rem;">Gửi qua email sau khi hoàn thành</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HANDBOOK GATE -->
+<section class="handbook-section" aria-label="Xem sổ tay học viên">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom:40px;">
+      <span class="section-tag">📖 Đọc sổ tay</span>
+      <h2 class="section-title" style="margin-top:10px;">Mở Khóa Sổ Tay Của Bạn</h2>
+      <p class="section-subtitle">
+        Nhập mật khẩu do giảng viên cung cấp sau khi hoàn thành khóa học để xem tài liệu.
+      </p>
+    </div>
+
+    <!-- LOCK CARD (default visible) -->
+    <div class="lock-card fade-in" id="lockCard">
+      <div class="lock-card__icon" aria-hidden="true">🔒</div>
+      <div class="lock-card__title">Tài liệu được bảo vệ</div>
+      <p class="lock-card__subtitle">
+        Sổ tay này dành riêng cho học viên đã hoàn thành khóa EZ Memory.
+        Chưa có mật khẩu?
+        <a href="register.html">Đăng ký ngay</a> và hoàn thành 5 buổi học
+        để nhận mật khẩu từ giảng viên qua email.
+      </p>
+
+      <form class="pw-form" id="pwForm" novalidate aria-label="Nhập mật khẩu để mở tài liệu">
+        <div class="pw-input-wrap">
+          <input
+            class="pw-input"
+            type="password"
+            id="pwInput"
+            placeholder="Nhập mật khẩu..."
+            autocomplete="current-password"
+            aria-label="Mật khẩu sổ tay"
+            aria-describedby="pwError"
+            required
+          >
+          <button type="button" class="pw-toggle" id="pwToggle" aria-label="Hiện/ẩn mật khẩu" title="Hiện/ẩn mật khẩu">
+            👁
+          </button>
+        </div>
+
+        <div class="pw-error" id="pwError" role="alert" aria-live="polite">
+          ❌ Mật khẩu không đúng. Vui lòng kiểm tra lại email từ giảng viên.
+        </div>
+
+        <button type="submit" class="btn-submit" id="pwSubmit">
+          🔓 Mở khóa tài liệu
+        </button>
+
+        <p class="pw-hint">
+          Quên mật khẩu? Liên hệ
+          <a href="mailto:ezmemory.ssa101@fpt.edu.vn" style="color:var(--blue);font-weight:600;">
+            ezmemory.ssa101@fpt.edu.vn
+          </a>
+        </p>
+      </form>
+    </div>
+
+    <!-- VIEWER (shown after correct password) -->
+    <div class="handbook-viewer" id="handbookViewer" aria-label="Sổ tay học viên EZ Memory">
+
+      <div class="unlock-toast visible" id="unlockToast" role="status" aria-live="polite">
+        ✅ Đã mở khóa thành công! Chào mừng bạn đến với Sổ Tay Học Viên EZ Memory.
+      </div>
+
+      <div class="viewer-header">
+        <div>
+          <div class="viewer-header__title">📘 Sổ Tay Học Viên – EZ Memory</div>
+          <div class="viewer-header__sub">Handbook ôn tập & áp dụng sau khóa học · 5 Sessions · 10 trang</div>
+        </div>
+        <div class="viewer-header__actions">
+          <a href="EZMemory_Handbook.pdf" download class="viewer-lock-btn" aria-label="Tải PDF về máy">
+            ⬇ Tải PDF
+          </a>
+          <button type="button" class="viewer-lock-btn" id="lockAgainBtn" aria-label="Khóa lại tài liệu">
+            🔒 Khóa lại
+          </button>
+        </div>
+      </div>
+
+      <div class="pdf-embed-wrap">
+        <iframe
+          id="pdfFrame"
+          src=""
+          title="EZ Memory – Sổ Tay Học Viên"
+          aria-label="Trình xem PDF sổ tay học viên EZ Memory"
+          allowfullscreen
+        ></iframe>
+        <div class="pdf-fallback" id="pdfFallback">
+          <p>Trình duyệt của bạn không hỗ trợ xem PDF trực tiếp.</p>
+          <a href="EZMemory_Handbook.pdf" download class="btn btn-primary">
+            ⬇ Tải Sổ Tay về máy
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.handbook-viewer -->
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-label="Đăng ký khóa học">
+  <div class="container">
+    <h2 class="cta-section__title fade-in">Chưa tham gia khóa học? 🚀</h2>
+    <p class="cta-section__subtitle fade-in fade-in-delay-1">
+      Đăng ký miễn phí ngay hôm nay – hoàn thành 5 buổi và nhận sổ tay này cùng nhiều tài liệu khác.
+    </p>
+    <div class="cta-section__btns fade-in fade-in-delay-2">
+      <a href="register.html" class="btn btn-white btn-lg" aria-label="Đăng ký miễn phí ngay">
+        🎓 Đăng ký miễn phí ngay
+      </a>
+      <a href="courses.html" class="btn btn-outline-white btn-lg" aria-label="Xem nội dung khóa học">
+        📚 Xem nội dung khóa học
+      </a>
+    </div>
+    <div class="cta-section__reassurance fade-in fade-in-delay-3">
+      <div class="cta-reassurance-item">Miễn phí 100%</div>
+      <div class="cta-reassurance-item">5 buổi · 45 phút/buổi</div>
+      <div class="cta-reassurance-item">Sổ tay & chứng chỉ</div>
+      <div class="cta-reassurance-item">Học online linh hoạt</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo">EZ <span class="logo-accent">Memory</span></a>
+        <p class="footer__tagline">Học ít hơn – Nhớ lâu hơn – Hiệu quả hơn.<br>
+          Khóa học kỹ năng học tập miễn phí dành cho học sinh, sinh viên Việt Nam.</p>
+        <span class="tag tag--navy" style="font-size:.78rem;">SSA101 · Nhóm 6 · ĐH FPT</span>
+      </div>
+      <div>
+        <p class="footer__heading">Khóa học</p>
+        <ul class="footer__links" role="list">
+          <li><a href="courses.html"   class="footer__link">Nội dung khóa học</a></li>
+          <li><a href="handbook.html"  class="footer__link">Sổ tay học viên</a></li>
+          <li><a href="register.html"  class="footer__link">Đăng ký ngay</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Hỗ trợ</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html#faq"         class="footer__link">Câu hỏi thường gặp</a></li>
+          <li><a href="index.html#giang-vien"  class="footer__link">Đội ngũ giảng viên</a></li>
+          <li><a href="index.html#quy-trinh"   class="footer__link">Cách thức tham gia</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Liên hệ</p>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:ezmemory.ssa101@fpt.edu.vn" class="footer__link">📧 ezmemory.ssa101@fpt.edu.vn</a></li>
+        </ul>
+        <p class="footer__tagline" style="margin-top:14px;font-size:.82rem;">
+          "Ghi nhớ không phải năng khiếu — đó là kỹ năng."
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 EZ Memory · Nhóm 6 · SSA101 · ĐH FPT · Học kỳ Hè 2025</p>
+      <p>Nguyễn Hữu Đạt · Nguyễn Khắc Minh Vũ · Nguyễn Thiên Lộc · Nguyễn Hữu Nhật Anh · Hoàng Yến Nhi</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  var CORRECT = 'ezmemory2026';
+
+  var pwForm    = document.getElementById('pwForm');
+  var pwInput   = document.getElementById('pwInput');
+  var pwToggle  = document.getElementById('pwToggle');
+  var pwError   = document.getElementById('pwError');
+  var pwSubmit  = document.getElementById('pwSubmit');
+  var lockCard  = document.getElementById('lockCard');
+  var viewer    = document.getElementById('handbookViewer');
+  var lockAgain = document.getElementById('lockAgainBtn');
+  var pdfFrame  = document.getElementById('pdfFrame');
+
+  /* Show/hide password */
+  pwToggle.addEventListener('click', function () {
+    var isText = pwInput.type === 'text';
+    pwInput.type = isText ? 'password' : 'text';
+    pwToggle.textContent = isText ? '👁' : '🙈';
+    pwToggle.setAttribute('aria-label', isText ? 'Hiện mật khẩu' : 'Ẩn mật khẩu');
+  });
+
+  /* Clear error on typing */
+  pwInput.addEventListener('input', function () {
+    pwInput.classList.remove('error');
+    pwError.classList.remove('visible');
+  });
+
+  /* Submit */
+  pwForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = pwInput.value.trim();
+
+    if (val === CORRECT) {
+      unlock();
+    } else {
+      pwInput.classList.add('error');
+      pwError.classList.add('visible');
+      pwInput.focus();
+      /* Shake animation */
+      pwInput.style.animation = 'none';
+      void pwInput.offsetWidth;
+      pwInput.style.animation = 'pwShake .4s ease';
+    }
+  });
+
+  /* Unlock */
+  function unlock() {
+    lockCard.style.display = 'none';
+    viewer.classList.add('visible');
+    /* Load PDF only after unlock to avoid pre-fetch */
+    if (!pdfFrame.src || pdfFrame.src === window.location.href) {
+      pdfFrame.src = 'EZMemory_Handbook.pdf';
+    }
+    /* Detect if iframe failed to load PDF */
+    pdfFrame.addEventListener('error', function () {
+      document.getElementById('pdfFallback').style.display = 'block';
+      pdfFrame.style.display = 'none';
+    });
+    window.scrollTo({ top: viewer.offsetTop - 100, behavior: 'smooth' });
+  }
+
+  /* Lock again */
+  lockAgain.addEventListener('click', function () {
+    viewer.classList.remove('visible');
+    lockCard.style.display = '';
+    pwInput.value = '';
+    pwInput.type = 'password';
+    pwToggle.textContent = '👁';
+    pdfFrame.src = '';
+    window.scrollTo({ top: lockCard.offsetTop - 120, behavior: 'smooth' });
+  });
+
+  /* Enter key on submit */
+  pwInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      pwSubmit.click();
+    }
+  });
+})();
+</script>
+
+<style>
+@keyframes pwShake {
+  0%,100% { transform: translateX(0); }
+  20%     { transform: translateX(-8px); }
+  40%     { transform: translateX(8px); }
+  60%     { transform: translateX(-5px); }
+  80%     { transform: translateX(5px); }
+}
+</style>
+
+</body>
+</html>

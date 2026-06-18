@@ -16,6 +16,7 @@
     '<li role="listitem"><a href="index.html" class="navbar__link" aria-label="Trang chủ">Trang chủ</a></li>' +
     '<li role="listitem"><a href="courses.html" class="navbar__link" aria-label="Khóa học">Khóa học</a></li>' +
     '<li role="listitem"><a href="index.html#giang-vien" class="navbar__link" aria-label="Giảng viên">Giảng viên</a></li>' +
+    '<li role="listitem"><a href="handbook.html" class="navbar__link" aria-label="Sổ tay">Sổ tay</a></li>' +
     '<li role="listitem"><a href="index.html#faq" class="navbar__link" aria-label="FAQ">FAQ</a></li>' +
     '<li role="listitem"><a href="register.html" class="navbar__link" aria-label="Đăng ký">Đăng ký</a></li>' +
     '</ul>' +

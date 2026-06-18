@@ -446,6 +446,48 @@
   }
 
   /* ============================================================
+     13. CERTIFICATE LIGHTBOX
+     ============================================================ */
+  function initCertLightbox() {
+    var lightbox = document.getElementById('certLightbox');
+    var lbImg    = document.getElementById('certLightboxImg');
+    var closeBtn = document.getElementById('certClose');
+    if (!lightbox || !lbImg) return;
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || 'Chứng chỉ học viên EZ Memory';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      closeBtn && closeBtn.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.cert-card').forEach(function (card) {
+      function trigger() {
+        var src = card.dataset.cert;
+        var alt = card.querySelector('img') ? card.querySelector('img').alt : '';
+        if (src) openLightbox(src, alt);
+      }
+      card.addEventListener('click', trigger);
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  }
+
+  /* ============================================================
      INIT ALL
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
@@ -461,6 +503,7 @@
     initRegistrationForm();
     initThankYou();
     initShareButton();
+    initCertLightbox();
   });
 
 }());
