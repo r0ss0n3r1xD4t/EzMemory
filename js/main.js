@@ -248,20 +248,21 @@
     function showError(id, msg) {
       var field = getField(id);
       var errEl = getError(id);
-      if (field)  { field.classList.add('error');    field.classList.remove('valid'); }
+      if (field)  { field.classList.add('error');    field.classList.remove('valid'); field.setAttribute('aria-invalid', 'true'); }
       if (errEl)  { errEl.textContent = msg;         errEl.classList.add('visible'); }
     }
 
     function clearError(id) {
       var field = getField(id);
       var errEl = getError(id);
-      if (field)  { field.classList.remove('error'); field.classList.add('valid'); }
+      if (field)  { field.classList.remove('error'); field.classList.add('valid'); field.removeAttribute('aria-invalid'); }
       if (errEl)  { errEl.classList.remove('visible'); }
     }
 
     function clearAll() {
       form.querySelectorAll('.form-control').forEach(function (f) {
         f.classList.remove('error', 'valid');
+        f.removeAttribute('aria-invalid');
       });
       form.querySelectorAll('.form-error').forEach(function (e) {
         e.classList.remove('visible');
@@ -275,49 +276,76 @@
 
       switch (id) {
         case 'fullname':
-          if (!val || val.length < 2) {
-            showError(id, 'Vui lòng nhập họ và tên đầy đủ (ít nhất 2 ký tự).');
+          if (!val) {
+            showError(id, 'Họ và tên là bắt buộc. Ví dụ: Nguyễn Văn A');
+            return false;
+          }
+          if (val.length < 2) {
+            showError(id, 'Tên quá ngắn – vui lòng nhập đầy đủ họ và tên.');
             return false;
           }
           clearError(id); return true;
 
         case 'email':
-          if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-            showError(id, 'Địa chỉ email không hợp lệ. Vui lòng kiểm tra lại.');
+          if (!val) {
+            showError(id, 'Email là bắt buộc để nhận lịch học và xác nhận.');
+            return false;
+          }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            showError(id, 'Email không đúng định dạng. Ví dụ: ten@gmail.com');
             return false;
           }
           clearError(id); return true;
 
         case 'phone':
-          if (val && !/^(\+84|0)\d{9}$/.test(val)) {
-            showError(id, 'Số điện thoại không hợp lệ. Vui lòng nhập 10 số (0xxxxxxxxx) hoặc dạng +84xxxxxxxxx.');
+          if (val && !/^(\+84|0)\d{9}$/.test(val.replace(/\s/g, ''))) {
+            showError(id, 'Số điện thoại phải 10 số bắt đầu bằng 0, hoặc dạng +84xxxxxxxxx.');
             return false;
           }
           clearError(id); return true;
 
         case 'education':
           if (!val) {
-            showError(id, 'Vui lòng chọn trình độ học vấn của bạn.');
+            showError(id, 'Vui lòng chọn nhóm học viên phù hợp với bạn.');
             return false;
           }
           clearError(id); return true;
 
         case 'study-style':
           if (!val) {
-            showError(id, 'Vui lòng chọn cách học hiện tại của bạn.');
+            showError(id, 'Vui lòng chọn cách học gần nhất với bạn.');
             return false;
           }
           clearError(id); return true;
 
         case 'reason':
-          if (!val || val.length < 20) {
-            showError(id, 'Vui lòng nhập lý do tham gia (ít nhất 20 ký tự).');
+          if (!val) {
+            showError(id, 'Vui lòng chia sẻ lý do bạn muốn tham gia (tối thiểu 20 ký tự).');
+            return false;
+          }
+          if (val.length < 20) {
+            showError(id, 'Còn ' + (20 - val.length) + ' ký tự nữa – hãy chia sẻ thêm một chút!');
             return false;
           }
           clearError(id); return true;
 
         default: return true;
       }
+    }
+
+    // Character counter for reason textarea
+    var reasonField   = getField('reason');
+    var reasonCounter = document.getElementById('reason-counter');
+    if (reasonField && reasonCounter) {
+      function updateCounter() {
+        var len = reasonField.value.length;
+        var max = parseInt(reasonField.getAttribute('maxlength') || '1000', 10);
+        reasonCounter.textContent = len + ' / ' + max;
+        reasonCounter.classList.toggle('warn',  len >= max * 0.8);
+        reasonCounter.classList.toggle('limit', len >= max);
+      }
+      reasonField.addEventListener('input', updateCounter);
+      updateCounter();
     }
 
     // Live blur validation

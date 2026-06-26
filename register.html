@@ -193,11 +193,14 @@
                 class="form-control"
                 placeholder="Ví dụ: Mình đang học đại học và gặp khó khăn trong việc ghi nhớ kiến thức. Mình muốn tìm phương pháp học hiệu quả hơn để cải thiện kết quả học tập..."
                 aria-required="true"
-                aria-describedby="reason-hint reason-error"
+                aria-describedby="reason-hint reason-counter reason-error"
                 rows="4"
                 maxlength="1000"
               ></textarea>
-              <div class="form-hint" id="reason-hint">Tối thiểu 20 ký tự – chia sẻ thêm để chúng tôi hỗ trợ bạn tốt hơn.</div>
+              <div class="form-hint-row">
+                <div class="form-hint" id="reason-hint">Tối thiểu 20 ký tự.</div>
+                <div class="form-counter" id="reason-counter" aria-live="polite">0 / 1000</div>
+              </div>
               <div class="form-error" id="reason-error" role="alert" aria-live="polite"></div>
             </div>
 

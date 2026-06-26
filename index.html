@@ -104,55 +104,106 @@
           mà không cần học ngày đêm.
         </p>
         <div class="hero__btns fade-in fade-in-delay-3">
-          <a href="register.html" class="btn btn-white btn-lg" aria-label="Đăng ký miễn phí ngay">
+          <a href="register.html" class="btn btn-white btn-lg hero__btn-primary" aria-label="Đăng ký miễn phí ngay">
             🚀 Đăng ký miễn phí ngay
           </a>
-          <a href="courses.html" class="btn btn-outline-white btn-lg" aria-label="Xem nội dung khóa học">
-            📚 Xem nội dung khóa học
+          <a href="courses.html" class="btn btn-outline-white" aria-label="Xem nội dung khóa học">
+            Xem nội dung →
           </a>
         </div>
         <div class="hero__proof fade-in fade-in-delay-4">
           <div class="hero__proof-item">
             <span class="proof-icon">⭐</span>
-            <span><strong>4.9/5</strong> đánh giá</span>
+            <span><strong>4.9/5</strong> từ học viên</span>
           </div>
           <div class="hero__proof-item">
             <span class="proof-icon">👥</span>
             <span><strong>500+</strong> học viên</span>
           </div>
           <div class="hero__proof-item">
-            <span class="proof-icon">📅</span>
-            <span><strong>5 buổi · 45 phút</strong>/buổi</span>
+            <span class="proof-icon">🎓</span>
+            <span><strong>ĐH FPT</strong> · SSA101</span>
           </div>
         </div>
       </div>
 
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__card-wrap">
-          <div class="hero__mockup">
-            <div class="hero__mockup-emoji">🧠</div>
-            <h3>EZ Memory</h3>
-            <p>Khóa học kỹ năng học tập</p>
-            <div class="hero__mockup-tags">
-              <span class="hero__mockup-tag">5 buổi học</span>
-              <span class="hero__mockup-tag">45 phút/buổi</span>
-              <span class="hero__mockup-tag">Miễn phí 100%</span>
+
+          <!-- Course roadmap card – shows actual course content -->
+          <div class="hero__roadmap">
+            <div class="hero__roadmap-header">
+              <span class="hero__roadmap-badge-main">🎓</span>
+              <div>
+                <strong>EZ Memory</strong>
+                <span>Lộ trình 5 buổi học</span>
+              </div>
+            </div>
+            <div class="hero__roadmap-items">
+              <div class="hero__roadmap-item">
+                <div class="hero__roadmap-num rn-orange">S1</div>
+                <div class="hero__roadmap-info">
+                  <strong>Khoa học bộ nhớ</strong>
+                  <span>Đường cong quên lãng Ebbinghaus</span>
+                </div>
+                <div class="hero__roadmap-dur">45'</div>
+              </div>
+              <div class="hero__roadmap-item">
+                <div class="hero__roadmap-num rn-blue">S2</div>
+                <div class="hero__roadmap-info">
+                  <strong>Active Recall</strong>
+                  <span>Kỹ thuật Feynman & Flashcard</span>
+                </div>
+                <div class="hero__roadmap-dur">45'</div>
+              </div>
+              <div class="hero__roadmap-item">
+                <div class="hero__roadmap-num rn-teal">S3</div>
+                <div class="hero__roadmap-info">
+                  <strong>Spaced Repetition</strong>
+                  <span>Lịch ôn tập theo khoa học</span>
+                </div>
+                <div class="hero__roadmap-dur">45'</div>
+              </div>
+              <div class="hero__roadmap-item">
+                <div class="hero__roadmap-num rn-green">S4</div>
+                <div class="hero__roadmap-info">
+                  <strong>Hệ thống cá nhân</strong>
+                  <span>Cornell Notes & Mind Map</span>
+                </div>
+                <div class="hero__roadmap-dur">45'</div>
+              </div>
+              <div class="hero__roadmap-item">
+                <div class="hero__roadmap-num rn-yellow">S5</div>
+                <div class="hero__roadmap-info">
+                  <strong>Áp dụng thực tế</strong>
+                  <span>Case study & Lộ trình cá nhân</span>
+                </div>
+                <div class="hero__roadmap-dur">45'</div>
+              </div>
+            </div>
+            <div class="hero__roadmap-footer">
+              <span>✓ Miễn phí 100%</span>
+              <span>✓ Có chứng chỉ</span>
+              <span>✓ Online</span>
+            </div>
+          </div>
+
+          <!-- Floating proof card -->
+          <div class="floating-card" aria-hidden="true">
+            <div class="fc-icon orange">⭐</div>
+            <div class="fc-text">
+              <strong>4.9/5 đánh giá</strong>
+              <span>500+ học viên SSA101</span>
             </div>
           </div>
           <div class="floating-card" aria-hidden="true">
-            <div class="fc-icon orange">🔁</div>
+            <div class="fc-icon blue">🧠</div>
             <div class="fc-text">
-              <strong>Active Recall</strong>
-              <span>Nhớ bằng cách kiểm tra</span>
+              <strong>Khoa học kiểm chứng</strong>
+              <span>Neuroscience-based</span>
             </div>
           </div>
-          <div class="floating-card" aria-hidden="true">
-            <div class="fc-icon blue">📅</div>
-            <div class="fc-text">
-              <strong>Spaced Repetition</strong>
-              <span>Ôn đúng lúc, đúng chỗ</span>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -380,9 +431,9 @@
 <section class="benefits section" id="loi-ich" aria-label="Lợi ích khóa học">
   <div class="container text-center">
     <span class="section-tag" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.2)">Kết quả thực tế</span>
-    <h2 class="section-title fade-in">Những Con Số Không Biết Nói Dối</h2>
+    <h2 class="section-title fade-in">Con Số Từ Học Viên Thực Tế</h2>
     <p class="section-subtitle fade-in fade-in-delay-1">
-      Hàng trăm học viên đã thay đổi cách học và đạt kết quả vượt trội.
+      Khảo sát từ học viên đã hoàn thành khóa EZ Memory – SSA101, ĐH FPT.
     </p>
 
     <div class="benefits__stats">
@@ -402,7 +453,7 @@
         <div class="stat-item__number">
           <span data-counter="500" data-suffix="+">0+</span>
         </div>
-        <div class="stat-item__label">Học viên đã tốt nghiệp</div>
+        <div class="stat-item__label">Học viên đã tham gia</div>
       </div>
       <div class="stat-item fade-in fade-in-delay-4">
         <div class="stat-item__number">
@@ -411,6 +462,7 @@
         <div class="stat-item__label">Đánh giá trung bình</div>
       </div>
     </div>
+    <p class="benefits__source fade-in">Dữ liệu từ khảo sát sau khóa học · Nhóm 6 SSA101 · ĐH FPT · 2024–2025</p>
 
     <div class="benefits__bullets">
       <div class="benefit-bullet fade-in fade-in-delay-1">
