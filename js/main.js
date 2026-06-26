@@ -33,6 +33,7 @@
       var isOpen = nav.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu điều hướng');
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -81,6 +82,9 @@
      4. INTERSECTION FADE-IN
      ============================================================ */
   function initFadeIn() {
+    // Mark body so CSS activates the animation (content visible without JS)
+    document.body.classList.add('js-loaded');
+
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.fade-in').forEach(function (el) {
         el.classList.add('visible');
@@ -94,7 +98,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(function (el) {
       observer.observe(el);
     });
@@ -114,12 +118,15 @@
         document.querySelectorAll('.faq-item__question').forEach(function (q) {
           q.setAttribute('aria-expanded', 'false');
           var a = q.closest('.faq-item').querySelector('.faq-item__answer');
-          if (a) a.classList.remove('open');
+          if (a) { a.classList.remove('open'); a.style.maxHeight = ''; }
         });
 
         if (!isOpen) {
           this.setAttribute('aria-expanded', 'true');
-          if (answer) answer.classList.add('open');
+          if (answer) {
+            answer.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
         }
       });
     });
@@ -139,12 +146,15 @@
         document.querySelectorAll('.accordion-trigger').forEach(function (t) {
           t.setAttribute('aria-expanded', 'false');
           var c = t.closest('.accordion-item').querySelector('.accordion-content');
-          if (c) c.classList.remove('open');
+          if (c) { c.classList.remove('open'); c.style.maxHeight = ''; }
         });
 
         if (!isOpen) {
           this.setAttribute('aria-expanded', 'true');
-          if (content) content.classList.add('open');
+          if (content) {
+            content.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
         }
       });
     });
@@ -488,6 +498,28 @@
   }
 
   /* ============================================================
+     STICKY MOBILE CTA
+     ============================================================ */
+  function initStickyCTA() {
+    var stickyCta = document.getElementById('sticky-cta');
+    var hero      = document.querySelector('.hero');
+    if (!stickyCta || !hero) return;
+
+    var link = stickyCta.querySelector('.sticky-cta__btn');
+
+    function onScroll() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      var shouldShow = heroBottom < 0;
+      stickyCta.classList.toggle('visible', shouldShow);
+      stickyCta.setAttribute('aria-hidden', String(!shouldShow));
+      if (link) link.setAttribute('tabindex', shouldShow ? '0' : '-1');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ============================================================
      INIT ALL
      ============================================================ */
   document.addEventListener('DOMContentLoaded', function () {
@@ -504,6 +536,7 @@
     initThankYou();
     initShareButton();
     initCertLightbox();
+    initStickyCTA();
   });
 
 }());

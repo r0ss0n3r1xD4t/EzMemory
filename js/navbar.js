@@ -21,7 +21,7 @@
     '<li role="listitem"><a href="register.html" class="navbar__link" aria-label="Đăng ký">Đăng ký</a></li>' +
     '</ul>' +
     '<a href="register.html" class="btn btn-primary navbar__cta" aria-label="Đăng ký miễn phí">Đăng ký miễn phí</a>' +
-    '<button class="navbar__toggle" id="nav-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="navbar-nav">' +
+    '<button class="navbar__toggle" id="nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="navbar-nav">' +
     '<span></span><span></span><span></span>' +
     '</button>' +
     '</div>' +

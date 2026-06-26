@@ -67,15 +67,21 @@
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Google Fonts: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Lexend:wght@700;800;900&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<a href="#main-content" class="skip-to-content">Bỏ qua điều hướng</a>
 
 <!-- Navbar injected by js/navbar.js -->
 <header></header>
 <script src="js/navbar.js"></script>
 
-<main>
+<main id="main-content">
 
 <!-- ============================================================
      HERO
@@ -158,9 +164,8 @@
      ============================================================ -->
 <section class="problems section" id="van-de" aria-label="Vấn đề học tập thường gặp">
   <div class="container text-center">
-    <span class="section-tag fade-in">Bạn có gặp phải điều này?</span>
-    <h2 class="section-title fade-in fade-in-delay-1">Tại sao bạn học mãi mà vẫn không nhớ?</h2>
-    <p class="section-subtitle fade-in fade-in-delay-2">
+    <h2 class="section-title fade-in">Tại sao bạn học mãi mà vẫn không nhớ?</h2>
+    <p class="section-subtitle fade-in fade-in-delay-1">
       Đây là những vấn đề phổ biến mà hầu hết học sinh, sinh viên đều gặp phải.
       Bạn không đơn độc!
     </p>
@@ -195,8 +200,6 @@
 <section class="solution section" id="giai-phap" aria-label="Giải pháp EZ Memory">
   <div class="container">
     <div class="text-center">
-      <span class="section-tag fade-in">Giải pháp của chúng tôi</span>
-    </div>
     <p class="solution__intro fade-in fade-in-delay-1">
       Không cần học <em>nhiều hơn</em> – Cần học <em>đúng cách</em> hơn
     </p>
@@ -451,8 +454,7 @@
      ============================================================ -->
 <section class="process section" id="quy-trinh" aria-label="Quy trình tham gia">
   <div class="container text-center">
-    <span class="section-tag fade-in">Cách thức hoạt động</span>
-    <h2 class="section-title fade-in fade-in-delay-1">Bắt Đầu Chỉ Với 4 Bước Đơn Giản</h2>
+    <h2 class="section-title fade-in">Bắt Đầu Chỉ Với 4 Bước Đơn Giản</h2>
     <p class="section-subtitle fade-in fade-in-delay-2">
       Từ đăng ký đến áp dụng, mọi thứ đều dễ dàng và hoàn toàn miễn phí.
     </p>
@@ -486,8 +488,7 @@
      ============================================================ -->
 <section class="instructors section" id="giang-vien" aria-label="Đội ngũ giảng viên">
   <div class="container text-center">
-    <span class="section-tag fade-in">Đội ngũ thực hiện</span>
-    <h2 class="section-title fade-in fade-in-delay-1">Những Người Tạo Ra EZ Memory</h2>
+    <h2 class="section-title fade-in">Những Người Tạo Ra EZ Memory</h2>
     <p class="section-subtitle fade-in fade-in-delay-2">
       Nhóm sinh viên đam mê giáo dục từ ĐH FPT, mang sứ mệnh giúp bạn học thông minh hơn.
     </p>
@@ -552,8 +553,7 @@
      ============================================================ -->
 <section class="testimonials section" id="cam-nhan" aria-label="Cảm nhận học viên">
   <div class="container text-center">
-    <span class="section-tag fade-in">Học viên nói gì?</span>
-    <h2 class="section-title fade-in fade-in-delay-1">Hàng Trăm Học Viên Đã Thay Đổi</h2>
+    <h2 class="section-title fade-in">Hàng Trăm Học Viên Đã Thay Đổi</h2>
     <p class="section-subtitle fade-in fade-in-delay-2">
       Những câu chuyện thật từ học viên đã hoàn thành khóa EZ Memory.
     </p>
@@ -655,7 +655,7 @@
 <!-- Lightbox -->
 <div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Xem chứng chỉ">
   <button class="cert-lightbox__close" id="certClose" aria-label="Đóng">✕</button>
-  <img class="cert-lightbox__img" id="certLightboxImg" src="" alt="Chứng chỉ học viên EZ Memory">
+  <img class="cert-lightbox__img" id="certLightboxImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Chứng chỉ học viên EZ Memory">
 </div>
 
 <!-- ============================================================
@@ -663,8 +663,7 @@
      ============================================================ -->
 <section class="faq section" id="faq" aria-label="Câu hỏi thường gặp">
   <div class="container text-center">
-    <span class="section-tag fade-in">Giải đáp thắc mắc</span>
-    <h2 class="section-title fade-in fade-in-delay-1">Câu Hỏi Thường Gặp</h2>
+    <h2 class="section-title fade-in">Câu Hỏi Thường Gặp</h2>
     <p class="section-subtitle fade-in fade-in-delay-2">
       Có điều gì thắc mắc? Chúng tôi đã chuẩn bị sẵn câu trả lời cho bạn.
     </p>
@@ -811,6 +810,13 @@
 </section>
 
 </main>
+
+<!-- Sticky Mobile CTA (shown only on mobile after scrolling past hero) -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a href="register.html" class="sticky-cta__btn" tabindex="-1" aria-label="Đăng ký khóa học miễn phí">
+    🎓 Đăng ký miễn phí ngay
+  </a>
+</div>
 
 <!-- ============================================================
      FOOTER
